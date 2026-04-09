@@ -129,7 +129,7 @@ rulesmith/
 After installation, run your first conversation analysis:
 
 ```
-/improve-rules
+/rulesmith
 ```
 
 This scans the current conversation for patterns and generates initial rule suggestions.
@@ -139,7 +139,7 @@ This scans the current conversation for patterns and generates initial rule sugg
 Check your metrics:
 
 ```
-/improve-rules --stats
+/rulesmith --stats
 ```
 
 Output:
@@ -158,13 +158,13 @@ Last Analysis: 2026-04-08T14:30:00Z
 See recent improvements:
 
 ```
-/improve-rules --history
+/rulesmith --history
 ```
 
 ### 4. Restore from Backup (if needed)
 
 ```
-/improve-rules --rollback --to 2026-04-08T10:00:00Z
+/rulesmith --rollback --to 2026-04-08T10:00:00Z
 ```
 
 ---
@@ -216,9 +216,9 @@ cp .claude/skills/rulesmith/data/history/rules-<latest-timestamp>.md \
 ## Next Steps
 
 1. Read your platform-specific guide (linked above)
-2. Run your first analysis with `/improve-rules`
+2. Run your first analysis with `/rulesmith`
 3. Review suggested rules and apply improvements
-4. Track your progress with `/improve-rules --stats`
+4. Track your progress with `/rulesmith --stats`
 
 ---
 

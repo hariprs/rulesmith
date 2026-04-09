@@ -88,7 +88,7 @@ The skill will:
 In Cursor's chat interface:
 
 ```
-/improve-rules
+/rulesmith
 ```
 
 Or ask Cursor directly:
@@ -112,7 +112,7 @@ Or open it directly: `Cmd+Shift+.` (show hidden files) → open `.cursorrules`
 After analysis:
 
 ```
-You: /improve-rules
+You: /rulesmith
 
 Cursor: 📊 Conversation Analysis
 
@@ -210,7 +210,7 @@ The skill respects this hierarchy and will:
 Cursor's Composer feature (multi-file editing) works with generated rules:
 
 ```
-/improve-rules
+/rulesmith
 
 # After generating rules
 "Apply these rules to the following files:"
@@ -283,8 +283,8 @@ echo "# Backend-specific rules" > project-a/.cursorrules
 echo "# Frontend-specific rules" > project-b/.cursorrules
 
 # Run analysis for each project
-cd project-a && /improve-rules
-cd project-b && /improve-rules
+cd project-a && /rulesmith
+cd project-b && /rulesmith
 ```
 
 ---
@@ -311,7 +311,7 @@ cd project-b && /improve-rules
 
 ### Analysis Not Working
 
-**Issue:** `/improve-rules` doesn't respond
+**Issue:** `/rulesmith` doesn't respond
 
 **Solutions:**
 ```bash
@@ -351,7 +351,7 @@ cp -r ~/.claude/skills/rulesmith/ .claude/skills/
 echo "# Project Rules" > .cursorrules
 
 # 4. Start working in Cursor
-# 5. After first session, run: /improve-rules
+# 5. After first session, run: /rulesmith
 ```
 
 ### Workflow 2: Existing Project Enhancement
@@ -365,7 +365,7 @@ mkdir -p .claude/skills/
 cp -r ~/.claude/skills/rulesmith/ .claude/skills/
 
 # 3. Analyze conversation patterns
-# In Cursor chat: /improve-rules
+# In Cursor chat: /rulesmith
 
 # 4. Apply suggested rules
 ```
@@ -397,7 +397,7 @@ git add .cursorrules
 git commit -m "Add team .cursorrules"
 
 # 4. Team members clone and use
-# Each member can run /improve-rules for personalization
+# Each member can run /rulesmith for personalization
 ```
 
 ---
@@ -410,7 +410,7 @@ A: Yes. Project rules override global rules for that specific project.
 
 **Q: How do I share rules with my team?**
 
-A: Commit `.cursorrules` to your repository. Each team member can also run `/improve-rules` for personalization.
+A: Commit `.cursorrules` to your repository. Each team member can also run `/rulesmith` for personalization.
 
 **Q: Will this work with Cursor's Composer feature?**
 

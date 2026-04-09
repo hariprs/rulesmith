@@ -27,8 +27,8 @@ These platforms have built-in support for RuleSmith:
 
 | Platform | Command | State Management | Backup |
 |----------|---------|------------------|--------|
-| Claude Code | `/improve-rules` | ✅ Full | ✅ Auto |
-| Cursor IDE | `/improve-rules` | ✅ Full | ✅ Auto |
+| Claude Code | `/rulesmith` | ✅ Full | ✅ Auto |
+| Cursor IDE | `/rulesmith` | ✅ Full | ✅ Auto |
 
 ### Adapter-Based Platforms
 These platforms use adapter scripts for integration:

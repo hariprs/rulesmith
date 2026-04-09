@@ -81,7 +81,7 @@ Create or edit `.vscode/settings.json`:
 2. Use the skill:
 
 ```
-/improve-rules
+/rulesmith
 ```
 
 ### Inline Chat Integration
@@ -105,7 +105,7 @@ Create a VS Code task for quick access:
     {
       "label": "Improve Copilot Rules",
       "type": "shell",
-      "command": "echo '/improve-rules' | pbcopy",
+      "command": "echo '/rulesmith' | pbcopy",
       "problemMatcher": [],
       "presentation": {
         "reveal": "silent"
@@ -258,7 +258,7 @@ Create custom keybindings for quick access:
     "key": "ctrl+shift+alt+r",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "/improve-rules\n"
+      "text": "/rulesmith\n"
     }
   }
 ]
@@ -400,7 +400,7 @@ touch .github/copilot-instructions.md
 
 # 4. Start coding with Copilot
 # 5. After first session, run in Copilot Chat:
-#    /improve-rules
+#    /rulesmith
 ```
 
 ### Workflow 2: Existing Project Enhancement
@@ -415,7 +415,7 @@ cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       ~/.claude/skills/
 
 # 3. Open Copilot Chat (Ctrl+Shift+I)
-# 4. Run: /improve-rules
+# 4. Run: /rulesmith
 
 # 5. Apply generated instructions to .github/copilot-instructions.md
 ```
@@ -430,7 +430,7 @@ code .
 
 # 2. Team instructions already in .github/copilot-instructions.md
 # 3. Add your personal preferences:
-#    In Copilot Chat: /improve-rules --personal
+#    In Copilot Chat: /rulesmith --personal
 
 # 4. Commit team instructions, keep personal local
 git add .github/copilot-instructions.md
@@ -443,7 +443,7 @@ git commit -m "Update team Copilot instructions"
 
 1. **Use workspace settings** - Keep team rules in `.vscode/settings.json`
 2. **Leverage multi-root** - Different instructions for frontend/backend
-3. **Keyboard shortcuts** - Bind `/improve-rules` to a quick key combo
+3. **Keyboard shortcuts** - Bind `/rulesmith` to a quick key combo
 4. **Status bar integration** - Quick access to analysis
 5. **Snippet expansion** - Quick template for new rule sections
 
@@ -457,7 +457,7 @@ A: Yes. See the [main Copilot guide](./COPILOT.md) for CLI usage.
 
 **Q: How do I share rules with my team?**
 
-A: Commit `.github/copilot-instructions.md` to your repository. Each team member can also run `/improve-rules` for personalization.
+A: Commit `.github/copilot-instructions.md` to your repository. Each team member can also run `/rulesmith` for personalization.
 
 **Q: Will this slow down VS Code?**
 

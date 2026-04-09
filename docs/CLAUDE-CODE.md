@@ -80,22 +80,22 @@ Please analyze our conversation and suggest rule improvements.
 Or use the command directly:
 
 ```
-/improve-rules
+/rulesmith
 ```
 
 ### Command Variants
 
 | Command | Description |
 |---------|-------------|
-| `/improve-rules` | Analyze conversation and suggest rule improvements |
-| `/improve-rules --stats` | Show metrics (patterns, improvements, reduction rate) |
-| `/improve-rules --history` | Show last 20 improvements from audit log |
-| `/improve-rules --rollback --to {timestamp}` | Restore rules from backup |
+| `/rulesmith` | Analyze conversation and suggest rule improvements |
+| `/rulesmith --stats` | Show metrics (patterns, improvements, reduction rate) |
+| `/rulesmith --history` | Show last 20 improvements from audit log |
+| `/rulesmith --rollback --to {timestamp}` | Restore rules from backup |
 
 ### Example Conversation
 
 ```
-You: /improve-rules
+You: /rulesmith
 
 Claude: 📊 Conversation Analysis
 
@@ -156,7 +156,7 @@ You can reference the skill in your project's `CLAUDE.md`:
 
 ## Skills
 
-When working on this project, use the `/improve-rules` skill to:
+When working on this project, use the `/rulesmith` skill to:
 - Analyze conversation patterns
 - Identify recurring corrections
 - Generate rule improvements for this codebase
@@ -165,7 +165,7 @@ When working on this project, use the `/improve-rules` skill to:
 
 After a coding session, run:
 ```
-/improve-rules
+/rulesmith
 ```
 
 This helps the assistant learn your preferences for this specific project.
@@ -184,7 +184,7 @@ Add a reminder in your `CLAUDE.md`:
 
 After completing work, please run:
 ```
-/improve-rules
+/rulesmith
 ```
 
 This helps track patterns and improve future sessions.
@@ -199,7 +199,7 @@ The skill can be configured to generate rules for specific projects:
 
 To capture project-specific patterns, use:
 ```
-/improve-rules
+/rulesmith
 ```
 
 Rules will be formatted according to this project's conventions.

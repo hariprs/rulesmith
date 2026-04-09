@@ -49,7 +49,7 @@ self_improvement:
     - ~/.hermes/templates/self-improvement/
   state_file: ~/.hermes/state/self-improvement/state.json
   triggers:
-    - "/improve-rules"
+    - "/rulesmith"
     - "/analyze"
     - "/learn"
 EOF
@@ -108,7 +108,7 @@ state:
 
 triggers:
   command:
-    - /improve-rules
+    - /rulesmith
     - /analyze
     - /learn
   intent:
@@ -194,7 +194,7 @@ hermes run self_improvement \
 
 # Interactive mode
 hermes chat
-> /improve-rules
+> /rulesmith
 ```
 
 ### Hermes Server
