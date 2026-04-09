@@ -273,6 +273,14 @@ Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTIN
 
 MIT © [RuleSmith Contributors](LICENSE)
 
+## Inspiration
+
+RuleSmith is inspired by **Andrej Karpathy's autoresearch methodology**—the concept of treating system parameters as learnable and continuously improving through automated feedback loops.
+
+Rather than accepting AI assistant instructions as static configuration, RuleSmith applies the autoresearch principle: every correction is a learning signal, and with enough iterations, the system converges on optimized behavior personalized to each user.
+
+The name reflects this: **forging better rules through the fire of continuous refinement.**
+
 ## Acknowledgments
 
 Built for the AI assistant community to improve human-AI collaboration through better rule discovery and refinement.
