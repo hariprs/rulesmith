@@ -1,0 +1,8 @@
+{
+  "last_analysis": "",
+  "patterns_found": [],
+  "improvements_applied": 0,
+  "corrections_reduction": 0,
+  "platform": "unknown",
+  "_schema_note": "results.jsonl is append-only, one JSON object per line"
+}

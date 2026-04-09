@@ -1,0 +1,86 @@
+# Async Operations
+- Use async/await
+
+# Error Handling
+- Catch errors
+
+# TypeScript Types
+- Add types
+
+# Code Formatting
+- Format code
+
+# Testing
+- Write tests
+
+# Security
+- Validate input
+
+# Authentication
+- Implement auth
+
+# API Design
+- Design APIs
+
+# Database
+- Use transactions
+
+# Performance
+- Optimize code
+
+# Caching
+- Cache data
+
+# Logging
+- Log events
+
+# Monitoring
+- Monitor metrics
+
+# Documentation
+- Document code
+
+# Version Control
+- Commit often
+
+# Code Review
+- Review changes
+
+# Dependencies
+- Update packages
+
+# Error Messages
+- Show errors
+
+# Input Validation
+- Check input
+
+# Output Sanitization
+- Clean output
+
+# File Operations
+- Handle files
+
+# Memory Management
+- Manage memory
+
+# Concurrency
+- Handle concurrency
+
+# Data Validation
+- Validate data
+
+# API Security
+- Secure APIs
+
+# Testing Coverage
+- Cover code
+
+# Code Quality
+- Maintain quality
+
+# Refactoring
+- Refactor code
+
+# Deployment
+- Deploy safely

@@ -1,0 +1,865 @@
+/**
+ * Unit Tests for Chart Data Interfaces and Types (Story 3-1)
+ *
+ * TDD Red Phase: Failing unit tests for type validation
+ *
+ * These tests validate the TypeScript interfaces and type definitions
+ * for chart data structures without actual rendering logic.
+ *
+ * Testing Strategy:
+ * - Test ChartData interface structure and required fields
+ * - Test ChartOptions interface configuration
+ * - Test type safety and validation
+ * - Test default configurations
+ * - Test custom configurations
+ * - Test edge cases and invalid inputs
+ *
+ * Test Pyramid Level: Unit (70% - type system validation)
+ *
+ * @todo Remove this todo when implementation is complete
+ */
+
+import { describe, test, expect } from '@jest/globals';
+
+// ============================================================================
+// TYPE DEFINITIONS (to be implemented in src/visualization/types.ts)
+// ============================================================================
+
+/**
+ * Chart type enum
+ */
+enum ChartType {
+  BAR = 'bar',
+  LINE = 'line',
+  PIE = 'pie',
+  SCATTER = 'scatter',
+}
+
+/**
+ * Pattern category enum (from Epic 2)
+ */
+enum PatternCategory {
+  CODE_STYLE = 'code_style',
+  TERMINOLOGY = 'terminology',
+  STRUCTURE = 'structure',
+  FORMATTING = 'formatting',
+  CONVENTION = 'convention',
+  OTHER = 'other',
+}
+
+/**
+ * Chart data interface
+ */
+interface ChartData {
+  chartType: ChartType;
+  title: string;
+  xAxis: {
+    label: string;
+    data: string[];
+  };
+  yAxis: {
+    label: string;
+    data: number[];
+  };
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor?: string | string[];
+    borderColor?: string | string[];
+    borderWidth?: number;
+  }[];
+  metadata?: {
+    totalPatterns: number;
+    dateRange: { start: string; end: string };
+    categories: string[];
+  };
+}
+
+/**
+ * Chart options interface
+ */
+interface ChartOptions {
+  responsive: boolean;
+  maintainAspectRatio: boolean;
+  plugins: {
+    legend: {
+      display: boolean;
+      position: 'top' | 'bottom' | 'left' | 'right';
+    };
+    title: {
+      display: boolean;
+      text: string;
+    };
+    tooltip: {
+      enabled: boolean;
+      callbacks?: {
+        label?: (context: any) => string;
+      };
+    };
+  };
+  scales?: {
+    x?: {
+      display: boolean;
+      title: {
+        display: boolean;
+        text: string;
+      };
+    };
+    y?: {
+      display: boolean;
+      title: {
+        display: boolean;
+        text: string;
+      };
+      beginAtZero: boolean;
+    };
+  };
+}
+
+/**
+ * Chart configuration interface
+ */
+interface ChartConfiguration {
+  type: ChartType;
+  data: ChartData;
+  options: ChartOptions;
+}
+
+/**
+ * Color palette for chart rendering
+ */
+interface ColorPalette {
+  primary: string[];
+  secondary: string[];
+  gradients: string[];
+}
+
+/**
+ * Validation result interface
+ */
+interface ValidationResult {
+  isValid: boolean;
+  errors: string[];
+}
+
+// ============================================================================
+// VALIDATION FUNCTIONS (to be implemented)
+// ============================================================================
+
+/**
+ * Validate ChartData structure
+ */
+function validateChartData(data: ChartData): ValidationResult {
+  // Implementation will be done in Dev step
+  throw new Error('Not implemented');
+}
+
+/**
+ * Validate ChartOptions structure
+ */
+function validateChartOptions(options: ChartOptions): ValidationResult {
+  // Implementation will be done in Dev step
+  throw new Error('Not implemented');
+}
+
+/**
+ * Get default chart options for a given chart type
+ */
+function getDefaultChartOptions(chartType: ChartType): ChartOptions {
+  // Implementation will be done in Dev step
+  throw new Error('Not implemented');
+}
+
+/**
+ * Get color palette for chart rendering
+ */
+function getColorPalette(): ColorPalette {
+  // Implementation will be done in Dev step
+  throw new Error('Not implemented');
+}
+
+/**
+ * Create chart configuration
+ */
+function createChartConfiguration(
+  type: ChartType,
+  data: ChartData,
+  customOptions?: Partial<ChartOptions>
+): ChartConfiguration {
+  // Implementation will be done in Dev step
+  throw new Error('Not implemented');
+}
+
+// ============================================================================
+// CHART DATA VALIDATION TESTS
+// ============================================================================
+
+describe('validateChartData - Unit Tests', () => {
+  test('should validate valid chart data', () => {
+    const validData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+          backgroundColor: '#ff0000',
+          borderColor: '#000000',
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    const result = validateChartData(validData);
+
+    expect(result.isValid).toBe(true);
+    expect(result.errors).toEqual([]);
+  });
+
+  test('should reject chart data with missing title', () => {
+    const invalidData = {
+      chartType: ChartType.BAR,
+      title: '',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+    } as ChartData;
+
+    const result = validateChartData(invalidData);
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors).toContain('Title is required');
+  });
+
+  test('should reject chart data with mismatched axis lengths', () => {
+    const invalidData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2], // Mismatched length
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+    };
+
+    const result = validateChartData(invalidData);
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors.some((error) => error.includes('length'))).toBe(true);
+  });
+
+  test('should reject chart data with empty datasets', () => {
+    const invalidData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [],
+    };
+
+    const result = validateChartData(invalidData);
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors).toContain('At least one dataset is required');
+  });
+
+  test('should accept chart data with valid metadata', () => {
+    const validData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+      metadata: {
+        totalPatterns: 100,
+        dateRange: {
+          start: '2026-03-01T00:00:00Z',
+          end: '2026-03-31T23:59:59Z',
+        },
+        categories: ['CODE_STYLE', 'TERMINOLOGY'],
+      },
+    };
+
+    const result = validateChartData(validData);
+
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should reject chart data with invalid date range', () => {
+    const invalidData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+      metadata: {
+        totalPatterns: 100,
+        dateRange: {
+          start: '2026-03-31T23:59:59Z', // End before start
+          end: '2026-03-01T00:00:00Z',
+        },
+        categories: ['CODE_STYLE'],
+      },
+    };
+
+    const result = validateChartData(invalidData);
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors.some((error) => error.includes('date range'))).toBe(true);
+  });
+});
+
+// ============================================================================
+// CHART OPTIONS VALIDATION TESTS
+// ============================================================================
+
+describe('validateChartOptions - Unit Tests', () => {
+  test('should validate valid chart options', () => {
+    const validOptions: ChartOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart Title',
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+    };
+
+    const result = validateChartOptions(validOptions);
+
+    expect(result.isValid).toBe(true);
+    expect(result.errors).toEqual([]);
+  });
+
+  test('should reject options with invalid legend position', () => {
+    const invalidOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'invalid' as any, // Invalid position
+        },
+        title: {
+          display: true,
+          text: 'Chart Title',
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+    };
+
+    const result = validateChartOptions(invalidOptions as ChartOptions);
+
+    expect(result.isValid).toBe(false);
+    expect(result.errors.some((error) => error.includes('legend position'))).toBe(true);
+  });
+
+  test('should accept options with scales configuration', () => {
+    const validOptions: ChartOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart Title',
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          title: {
+            display: true,
+            text: 'X Axis',
+          },
+        },
+        y: {
+          display: true,
+          title: {
+            display: true,
+            text: 'Y Axis',
+          },
+          beginAtZero: true,
+        },
+      },
+    };
+
+    const result = validateChartOptions(validOptions);
+
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should reject options with missing required plugins', () => {
+    const invalidOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+        },
+        title: {
+          display: false,
+          text: '', // Missing text when display is true
+        },
+        tooltip: {
+          enabled: true,
+        },
+      },
+    };
+
+    const result = validateChartOptions(invalidOptions as ChartOptions);
+
+    expect(result.isValid).toBe(false);
+  });
+});
+
+// ============================================================================
+// DEFAULT CHART OPTIONS TESTS
+// ============================================================================
+
+describe('getDefaultChartOptions - Unit Tests', () => {
+  test('should return default options for bar chart', () => {
+    const options = getDefaultChartOptions(ChartType.BAR);
+
+    expect(options).toBeDefined();
+    expect(options.responsive).toBe(true);
+    expect(options.maintainAspectRatio).toBe(true);
+    expect(options.plugins.legend.display).toBe(true);
+    expect(options.plugins.legend.position).toBe('top');
+    expect(options.scales).toBeDefined();
+    expect(options.scales?.x).toBeDefined();
+    expect(options.scales?.y).toBeDefined();
+  });
+
+  test('should return default options for line chart', () => {
+    const options = getDefaultChartOptions(ChartType.LINE);
+
+    expect(options).toBeDefined();
+    expect(options.responsive).toBe(true);
+    expect(options.plugins.legend.display).toBe(true);
+  });
+
+  test('should return default options for pie chart', () => {
+    const options = getDefaultChartOptions(ChartType.PIE);
+
+    expect(options).toBeDefined();
+    expect(options.responsive).toBe(true);
+    expect(options.plugins.legend.display).toBe(true);
+
+    // Pie charts don't have scales
+    expect(options.scales).toBeUndefined();
+  });
+
+  test('should include tooltip configuration by default', () => {
+    const options = getDefaultChartOptions(ChartType.BAR);
+
+    expect(options.plugins.tooltip.enabled).toBe(true);
+  });
+});
+
+// ============================================================================
+// COLOR PALETTE TESTS
+// ============================================================================
+
+describe('getColorPalette - Unit Tests', () => {
+  test('should return color palette with primary colors', () => {
+    const palette = getColorPalette();
+
+    expect(palette.primary).toBeDefined();
+    expect(palette.primary.length).toBeGreaterThan(0);
+    expect(palette.primary.length).toBeGreaterThanOrEqual(6); // At least 6 for categories
+  });
+
+  test('should return color palette with secondary colors', () => {
+    const palette = getColorPalette();
+
+    expect(palette.secondary).toBeDefined();
+    expect(palette.secondary.length).toBeGreaterThan(0);
+  });
+
+  test('should return color palette with gradients', () => {
+    const palette = getColorPalette();
+
+    expect(palette.gradients).toBeDefined();
+    expect(palette.gradients.length).toBeGreaterThan(0);
+  });
+
+  test('should have unique colors in primary palette', () => {
+    const palette = getColorPalette();
+
+    const uniqueColors = new Set(palette.primary);
+    expect(uniqueColors.size).toBe(palette.primary.length);
+  });
+
+  test('should use valid hex color codes', () => {
+    const palette = getColorPalette();
+
+    const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
+    palette.primary.forEach((color) => {
+      expect(color).toMatch(hexColorRegex);
+    });
+  });
+});
+
+// ============================================================================
+// CHART CONFIGURATION TESTS
+// ============================================================================
+
+describe('createChartConfiguration - Unit Tests', () => {
+  test('should create configuration with default options', () => {
+    const data: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+    };
+
+    const config = createChartConfiguration(ChartType.BAR, data);
+
+    expect(config.type).toBe(ChartType.BAR);
+    expect(config.data).toEqual(data);
+    expect(config.options).toBeDefined();
+    expect(config.options.responsive).toBe(true);
+  });
+
+  test('should merge custom options with defaults', () => {
+    const data: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+        },
+      ],
+    };
+
+    const customOptions = {
+      responsive: false,
+      maintainAspectRatio: false,
+    };
+
+    const config = createChartConfiguration(ChartType.BAR, data, customOptions);
+
+    expect(config.options.responsive).toBe(false);
+    expect(config.options.maintainAspectRatio).toBe(false);
+  });
+
+  test('should preserve data structure in configuration', () => {
+    const data: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Test Chart',
+      xAxis: {
+        label: 'Category',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [1, 2, 3],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [1, 2, 3],
+          backgroundColor: '#ff0000',
+        },
+      ],
+    };
+
+    const config = createChartConfiguration(ChartType.BAR, data);
+
+    expect(config.data).toEqual(data);
+    expect(config.data.datasets[0].backgroundColor).toBe('#ff0000');
+  });
+});
+
+// ============================================================================
+// TYPE SAFETY TESTS
+// ============================================================================
+
+describe('Type Safety', () => {
+  test('should enforce ChartType enum values', () => {
+    const validTypes: ChartType[] = [
+      ChartType.BAR,
+      ChartType.LINE,
+      ChartType.PIE,
+      ChartType.SCATTER,
+    ];
+
+    validTypes.forEach((type) => {
+      expect(Object.values(ChartType)).toContain(type);
+    });
+  });
+
+  test('should enforce PatternCategory enum values', () => {
+    const validCategories: PatternCategory[] = [
+      PatternCategory.CODE_STYLE,
+      PatternCategory.TERMINOLOGY,
+      PatternCategory.STRUCTURE,
+      PatternCategory.FORMATTING,
+      PatternCategory.CONVENTION,
+      PatternCategory.OTHER,
+    ];
+
+    validCategories.forEach((category) => {
+      expect(Object.values(PatternCategory)).toContain(category);
+    });
+  });
+
+  test('should require dataset label', () => {
+    const dataset = {
+      data: [1, 2, 3],
+    } as any; // Missing required 'label' field
+
+    expect(() => {
+      const data: ChartData = {
+        chartType: ChartType.BAR,
+        title: 'Test',
+        xAxis: { label: 'X', data: ['A'] },
+        yAxis: { label: 'Y', data: [1] },
+        datasets: [dataset],
+      };
+      validateChartData(data);
+    }).not.toThrow();
+  });
+
+  test('should accept optional dataset properties', () => {
+    const dataset = {
+      label: 'Dataset 1',
+      data: [1, 2, 3],
+      backgroundColor: '#ff0000',
+      borderColor: '#000000',
+      borderWidth: 2,
+    };
+
+    expect(dataset.backgroundColor).toBeDefined();
+    expect(dataset.borderColor).toBeDefined();
+    expect(dataset.borderWidth).toBeDefined();
+  });
+});
+
+// ============================================================================
+// EDGE CASES
+// ============================================================================
+
+describe('Edge Cases', () => {
+  test('should handle empty chart data', () => {
+    const emptyData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Empty Chart',
+      xAxis: {
+        label: 'Category',
+        data: [],
+      },
+      yAxis: {
+        label: 'Count',
+        data: [],
+      },
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [],
+        },
+      ],
+    };
+
+    const result = validateChartData(emptyData);
+
+    // Empty data should still be valid structure
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should handle large dataset', () => {
+    const largeData: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Large Chart',
+      xAxis: {
+        label: 'Category',
+        data: Array.from({ length: 10000 }, (_, i) => `Item ${i}`),
+      },
+      yAxis: {
+        label: 'Count',
+        data: Array.from({ length: 10000 }, () => Math.floor(Math.random() * 100)),
+      },
+      datasets: [
+        {
+          label: 'Large Dataset',
+          data: Array.from({ length: 10000 }, () => Math.floor(Math.random() * 100)),
+        },
+      ],
+    };
+
+    const result = validateChartData(largeData);
+
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should handle negative values in data', () => {
+    const dataWithNegatives: ChartData = {
+      chartType: ChartType.LINE,
+      title: 'Chart with Negatives',
+      xAxis: {
+        label: 'X',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Y',
+        data: [-5, 0, 5],
+      },
+      datasets: [
+        {
+          label: 'Dataset',
+          data: [-5, 0, 5],
+        },
+      ],
+    };
+
+    const result = validateChartData(dataWithNegatives);
+
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should handle zero values in data', () => {
+    const dataWithZeros: ChartData = {
+      chartType: ChartType.BAR,
+      title: 'Chart with Zeros',
+      xAxis: {
+        label: 'X',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Y',
+        data: [0, 0, 0],
+      },
+      datasets: [
+        {
+          label: 'Dataset',
+          data: [0, 0, 0],
+        },
+      ],
+    };
+
+    const result = validateChartData(dataWithZeros);
+
+    expect(result.isValid).toBe(true);
+  });
+
+  test('should handle decimal values in data', () => {
+    const dataWithDecimals: ChartData = {
+      chartType: ChartType.LINE,
+      title: 'Chart with Decimals',
+      xAxis: {
+        label: 'X',
+        data: ['A', 'B', 'C'],
+      },
+      yAxis: {
+        label: 'Y',
+        data: [1.5, 2.7, 3.9],
+      },
+      datasets: [
+        {
+          label: 'Dataset',
+          data: [1.5, 2.7, 3.9],
+        },
+      ],
+    };
+
+    const result = validateChartData(dataWithDecimals);
+
+    expect(result.isValid).toBe(true);
+  });
+});

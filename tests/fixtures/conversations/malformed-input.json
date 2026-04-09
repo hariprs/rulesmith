@@ -1,0 +1,21 @@
+{
+  "name": "malformed-input",
+  "description": "Edge case: conversation with malformed message structure (missing speaker labels)",
+  "conversation": [
+    {
+      "message": "I'll create a function for user authentication."
+    },
+    {
+      "speaker": "User",
+      "message": "That looks good."
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [],
+    "conversation_length": 0,
+    "total_corrections": 0,
+    "analysis_summary": "Conversation format unrecognizable. Expected AI/User labeled messages."
+  },
+  "expected_patterns": [],
+  "no_patterns_message": "Conversation format invalid - cannot analyze for patterns."
+}

@@ -1,0 +1,63 @@
+# Error Handling
+
+- Use try-catch blocks for error handling
+- Avoid try-catch blocks for performance
+- Always handle errors appropriately
+- Never handle errors in hot paths
+
+# Code Style
+
+- Use async/await syntax instead of Promise chains
+- Use Promise chains instead of async/await
+- Add explicit TypeScript return types to all functions
+- Use type inference instead of explicit types
+
+# Security
+
+- Always validate user input
+- Never validate user input for performance
+- Sanitize all user-provided data
+- Skip sanitization for trusted sources
+
+# Testing
+
+- Write unit tests for all functions
+- Don't write unit tests for simple functions
+- Mock external dependencies
+- Never mock external dependencies
+
+# Database
+
+- Use parameterized queries
+- Use string concatenation for queries
+- Employ prepared statements for SQL
+- Build SQL strings dynamically
+- Always use transactions
+- Never use transactions for simple queries
+
+# API Design
+
+- Use RESTful conventions
+- Use GraphQL instead of REST
+- Version your API
+- Never version API URLs
+- Provide consistent response formats
+- Use different response formats per endpoint
+
+# Performance
+
+- Use memoization for expensive computations
+- Avoid memoization to save memory
+- Cache frequently accessed data
+- Never cache user-specific data
+- Implement code splitting
+- Never split code for small apps
+
+# Code Quality
+
+- Follow ESLint rules
+- Disable ESLint for faster development
+- Format code with Prettier
+- Don't use formatters
+- Use meaningful variable names
+- Use short variable names for brevity

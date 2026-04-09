@@ -1,0 +1,38 @@
+{
+  "name": "no-corrections",
+  "description": "Conversation where user accepts all AI suggestions without modifications",
+  "conversation": [
+    {
+      "speaker": "AI",
+      "message": "I'll create a function called `getUserData()` that fetches user information."
+    },
+    {
+      "speaker": "User",
+      "message": "That looks good, thanks!"
+    },
+    {
+      "speaker": "AI",
+      "message": "Here's the component with TypeScript types added."
+    },
+    {
+      "speaker": "User",
+      "message": "Perfect, exactly what I needed."
+    },
+    {
+      "speaker": "AI",
+      "message": "I've organized the files into src/components and src/utils."
+    },
+    {
+      "speaker": "User",
+      "message": "Great structure. Let's proceed with that."
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [],
+    "conversation_length": 6,
+    "total_corrections": 0,
+    "analysis_summary": "No user corrections detected - user accepted all AI suggestions"
+  },
+  "expected_patterns": [],
+  "no_patterns_message": "No corrections provided — nothing to analyze for patterns."
+}

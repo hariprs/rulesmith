@@ -1,0 +1,100 @@
+{
+  "name": "multiple-patterns",
+  "description": "Conversation with multiple recurring patterns across different corrections",
+  "conversation": [
+    {
+      "speaker": "AI",
+      "message": "I'll organize the components as components/user/UserCard.tsx and components/user/UserProfile.tsx"
+    },
+    {
+      "speaker": "User",
+      "message": "I prefer a flat structure: components/UserCard.tsx and components/UserProfile.tsx"
+    },
+    {
+      "speaker": "AI",
+      "message": "Here's the code with double quotes for strings."
+    },
+    {
+      "speaker": "User",
+      "message": "Single quotes only, please. That's our team standard."
+    },
+    {
+      "speaker": "AI",
+      "message": "I'll use Promise.then() chains for the async operations."
+    },
+    {
+      "speaker": "User",
+      "message": "Let's use async/await instead. It's more readable."
+    },
+    {
+      "speaker": "AI",
+      "message": "Another function with double strings: const message = \"Hello World\";"
+    },
+    {
+      "speaker": "User",
+      "message": "Please use single quotes: const message = 'Hello World';"
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [
+      {
+        "correction_id": "c1",
+        "ai_suggestion": "components/user/UserCard.tsx",
+        "user_modification": "components/UserCard.tsx",
+        "confidence": "high",
+        "context": "file structure",
+        "category": "structure"
+      },
+      {
+        "correction_id": "c2",
+        "ai_suggestion": "double quotes for strings",
+        "user_modification": "single quotes only",
+        "confidence": "high",
+        "context": "code style",
+        "category": "code_style"
+      },
+      {
+        "correction_id": "c3",
+        "ai_suggestion": "Promise.then() chains",
+        "user_modification": "async/await",
+        "confidence": "high",
+        "context": "async patterns",
+        "category": "code_style"
+      },
+      {
+        "correction_id": "c4",
+        "ai_suggestion": "\"Hello World\"",
+        "user_modification": "'Hello World'",
+        "confidence": "high",
+        "context": "string formatting",
+        "category": "code_style"
+      }
+    ],
+    "conversation_length": 8,
+    "total_corrections": 4,
+    "analysis_summary": "User prefers flat component structure, single quotes, and async/await patterns"
+  },
+  "expected_patterns": [
+    {
+      "pattern_id": "p1",
+      "category": "code_style",
+      "description": "Prefers single quotes over double quotes for strings",
+      "frequency": 2,
+      "examples": ["double quotes → single quotes", "\\\"Hello World\\\" → 'Hello World'"]
+    },
+    {
+      "pattern_id": "p2",
+      "category": "structure",
+      "description": "Prefers flat component directory structure",
+      "frequency": 1,
+      "examples": ["components/user/UserCard.tsx → components/UserCard.tsx"]
+    },
+    {
+      "pattern_id": "p3",
+      "category": "code_style",
+      "description": "Prefers async/await over Promise chains",
+      "frequency": 1,
+      "examples": ["Promise.then() → async/await"]
+    }
+  ]
+}

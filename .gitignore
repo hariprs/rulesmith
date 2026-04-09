@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Exclude conversation data (contains personal info)
+.claude/skills/rulesmith/data/
+.claude/skills/rulesmith/history/
+.claude/skills/rulesmith/results.jsonl
+
+# OS files
+**/.DS_Store
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Test artifacts
+_test-output/
+reports/

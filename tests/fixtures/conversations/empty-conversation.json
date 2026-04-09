@@ -1,0 +1,13 @@
+{
+  "name": "empty-conversation",
+  "description": "Edge case: completely empty conversation",
+  "conversation": [],
+  "expected_analysis": {
+    "corrections": [],
+    "conversation_length": 0,
+    "total_corrections": 0,
+    "analysis_summary": "No conversation history provided. Nothing to analyze."
+  },
+  "expected_patterns": [],
+  "no_patterns_message": "No conversation history provided - cannot analyze for patterns."
+}

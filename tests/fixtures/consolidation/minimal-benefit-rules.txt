@@ -1,0 +1,35 @@
+# Code Style
+
+- Use async/await syntax
+- Add TypeScript types
+- Format with Prettier
+
+# Testing
+
+- Write unit tests
+- Use Jest framework
+- Mock dependencies
+
+# Security
+
+- Validate user input
+- Use parameterized queries
+- Implement authentication
+
+# Documentation
+
+- Add JSDoc comments
+- Maintain README
+- Provide examples
+
+# Error Handling
+
+- Use try-catch blocks
+- Log errors appropriately
+- Never swallow errors
+
+# Performance
+
+- Use memoization
+- Implement caching
+- Optimize queries

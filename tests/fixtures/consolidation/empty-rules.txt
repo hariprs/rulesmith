@@ -1,0 +1,7 @@
+# Code Style
+
+- Use TypeScript
+
+# Testing
+
+- Write tests

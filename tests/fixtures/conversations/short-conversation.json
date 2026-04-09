@@ -1,0 +1,31 @@
+{
+  "name": "short-conversation",
+  "description": "Very short conversation that may not yield meaningful patterns",
+  "conversation": [
+    {
+      "speaker": "AI",
+      "message": "I'll use double quotes for this string."
+    },
+    {
+      "speaker": "User",
+      "message": "Actually, single quotes please."
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [
+      {
+        "correction_id": "c1",
+        "ai_suggestion": "double quotes",
+        "user_modification": "single quotes",
+        "confidence": "medium",
+        "context": "code style",
+        "category": "code_style"
+      }
+    ],
+    "conversation_length": 2,
+    "total_corrections": 1,
+    "analysis_summary": "Single correction detected - conversation too short for pattern detection"
+  },
+  "expected_patterns": [],
+  "no_patterns_message": "Only one correction provided - patterns require at least 2 similar corrections."
+}

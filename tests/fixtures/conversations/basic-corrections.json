@@ -1,0 +1,38 @@
+{
+  "name": "basic-corrections",
+  "description": "Simple conversation with user correcting AI naming suggestion",
+  "conversation": [
+    {
+      "speaker": "AI",
+      "message": "I'll create a function called `getUserData()` that fetches user information from the database."
+    },
+    {
+      "speaker": "User",
+      "message": "Actually, let's call it `fetchUserData()` instead to be more explicit about the async nature."
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [
+      {
+        "correction_id": "c1",
+        "ai_suggestion": "getUserData()",
+        "user_modification": "fetchUserData()",
+        "confidence": "high",
+        "context": "function naming",
+        "category": "terminology"
+      }
+    ],
+    "conversation_length": 2,
+    "total_corrections": 1,
+    "analysis_summary": "User corrected function naming to use 'fetch' prefix for async operations"
+  },
+  "expected_patterns": [
+    {
+      "pattern_id": "p1",
+      "category": "terminology",
+      "description": "Prefers 'fetch' prefix for async functions",
+      "frequency": 1,
+      "examples": ["getUserData → fetchUserData"]
+    }
+  ]
+}

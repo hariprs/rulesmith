@@ -1,0 +1,64 @@
+{
+  "name": "rulesmith",
+  "version": "1.0.0",
+  "description": "AI assistant conversation analysis and rule improvement system for Claude Code, Cursor, Copilot, and other AI coding platforms",
+  "type": "module",
+  "author": "Project Self-Improvement Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/rulesmith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/rulesmith/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/rulesmith#readme",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:e2e": "jest --testPathPattern=tests/e2e",
+    "generate-report": "npx tsx scripts/generate-reports-yolo.ts",
+    "generate-report:pdf": "npx tsx scripts/generate-reports-yolo.ts --pdf",
+    "generate-report:html": "npx tsx scripts/generate-reports-yolo.ts --html",
+    "generate-report:large": "npx tsx scripts/generate-reports-yolo.ts --large",
+    "analyze-trends": "npx tsx scripts/analyze-trends.ts",
+    "predict-patterns": "npx tsx scripts/predict-patterns.ts",
+    "detect-anomalies": "npx tsx scripts/detect-anomalies.ts",
+    "generate-rules": "npx tsx scripts/generate-rules-yolo.ts"
+  },
+  "keywords": [
+    "claude-code",
+    "skill",
+    "self-improvement"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/chart.js": "^2.9.41",
+    "@types/d3": "^7.4.3",
+    "@types/jest": "^30.0.0",
+    "@types/jspdf": "^1.3.3",
+    "@types/plotly.js": "^3.0.10",
+    "@types/tmp": "^0.2.6",
+    "@types/uuid": "^10.0.0",
+    "chart.js": "^4.5.1",
+    "d3": "^7.9.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "plotly.js": "^3.4.0",
+    "tmp": "^0.2.5",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "yargs": "^18.0.0"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.7",
+    "uuid": "^13.0.0"
+  }
+}

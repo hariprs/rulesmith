@@ -1,0 +1,84 @@
+{
+  "name": "non-technical-role",
+  "description": "Conversation with non-technical role (Product Manager) correcting documentation",
+  "conversation": [
+    {
+      "speaker": "AI",
+      "message": "The user story describes: 'As a user, I want to login to the system so that I can access my account.'"
+    },
+    {
+      "speaker": "User",
+      "message": "Let's rephrase that to be more action-oriented: 'As a user, I want to securely authenticate so that I can access my personalized dashboard.'"
+    },
+    {
+      "speaker": "AI",
+      "message": "I'll document the acceptance criteria as: 'User can enter username and password'"
+    },
+    {
+      "speaker": "User",
+      "message": "Please use 'Given-When-Then' format: 'Given I am on the login page, When I enter valid credentials, Then I should be redirected to my dashboard'"
+    },
+    {
+      "speaker": "AI",
+      "message": "The PRD states the feature should be completed 'by next week'"
+    },
+    {
+      "speaker": "User",
+      "message": "Let's use specific sprint dates: 'Completed by Sprint 14 (ending March 28th)'"
+    }
+  ],
+  "expected_analysis": {
+    "corrections": [
+      {
+        "correction_id": "c1",
+        "ai_suggestion": "login to the system",
+        "user_modification": "securely authenticate",
+        "confidence": "high",
+        "context": "user story wording",
+        "category": "terminology"
+      },
+      {
+        "correction_id": "c2",
+        "ai_suggestion": "User can enter username and password",
+        "user_modification": "Given-When-Then format",
+        "confidence": "high",
+        "context": "acceptance criteria format",
+        "category": "conventions"
+      },
+      {
+        "correction_id": "c3",
+        "ai_suggestion": "by next week",
+        "user_modification": "Completed by Sprint 14 (ending March 28th)",
+        "confidence": "high",
+        "context": "timeline specificity",
+        "category": "conventions"
+      }
+    ],
+    "conversation_length": 6,
+    "total_corrections": 3,
+    "analysis_summary": "Product Manager user prefers precise terminology, structured acceptance criteria format, and specific sprint dates"
+  },
+  "expected_patterns": [
+    {
+      "pattern_id": "p1",
+      "category": "conventions",
+      "description": "Prefers structured formats (Given-When-Then) for acceptance criteria",
+      "frequency": 1,
+      "examples": ["Simple criteria → Given-When-Then format"]
+    },
+    {
+      "pattern_id": "p2",
+      "category": "terminology",
+      "description": "Prefers precise, action-oriented terminology over generic terms",
+      "frequency": 1,
+      "examples": ["login → securely authenticate"]
+    },
+    {
+      "pattern_id": "p3",
+      "category": "conventions",
+      "description": "Prefers specific sprint dates over vague timelines",
+      "frequency": 1,
+      "examples": ["by next week → Completed by Sprint 14 (ending March 28th)"]
+    }
+  ]
+}

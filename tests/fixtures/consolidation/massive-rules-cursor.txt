@@ -1,0 +1,1041 @@
+# Code Style
+
+- Use async/await syntax instead of Promise chains
+- Prefer async/await over .then() chains
+- Add explicit TypeScript return types to all functions
+- Always specify return types for function declarations
+- Use interface definitions for object shapes
+- Define interfaces for complex object types
+- Use const assertions for literal types
+- Apply const assertions when needing literal types
+- Use meaningful variable names
+- Choose descriptive variable names
+- Follow ESLint rules
+- Adhere to linting guidelines
+- Format code with Prettier
+- Apply Prettier formatting
+- Avoid code duplication
+- Extract repeated logic into functions
+- Keep functions small and focused
+- Write single-purpose functions
+- Comment complex logic
+- Add explanations for complicated code
+- Organize imports alphabetically
+- Sort import statements
+- Use absolute imports
+- Import from absolute paths
+
+# Error Handling
+
+- Use try-catch blocks for error handling
+- Wrap async operations in try-catch
+- Never swallow errors silently
+- Always handle errors appropriately
+- Log errors with context
+- Include stack traces in error logs
+- Provide meaningful error messages
+- Add descriptive text to error messages
+- Implement retry logic
+- Retry failed requests
+- Use circuit breakers
+- Prevent cascading failures
+- Implement fallback mechanisms
+- Provide backup functionality
+- Gracefully handle failures
+- Degrade functionality nicely
+
+# Testing
+
+- Write unit tests for all functions
+- Test business logic with unit tests
+- Use Jest for testing framework
+- Employ Jest as the test runner
+- Mock external dependencies
+- Mock external services in tests
+- Test error cases
+- Include negative test cases
+- Maintain test coverage above 80%
+- Keep code coverage high
+- Write integration tests
+- Test component interactions
+- Use test doubles
+- Implement test doubles appropriately
+- Test edge cases
+- Cover boundary conditions
+- Maintain test independence
+- Keep tests isolated
+- Test asynchronous code
+- Handle async test scenarios
+- Use fake timers
+- Mock time-dependent code
+
+# Performance
+
+- Avoid unnecessary re-renders
+- Prevent component re-renders when possible
+- Use memoization for expensive computations
+- Cache expensive calculation results
+- Lazy load components
+- Implement code splitting for large apps
+- Optimize database queries
+- Add indexes to frequently queried columns
+- Use pagination for large datasets
+- Implement limit-offset pagination
+- Monitor application performance
+- Track performance metrics
+- Optimize images
+- Compress and optimize images
+- Minimize bundle size
+- Reduce JavaScript bundle size
+- Cache frequently accessed data
+- Store hot data in cache
+- Invalidate cache properly
+- Manage cache expiration
+
+# Security
+
+- Validate user input
+- Sanitize all user-provided data
+- Use parameterized queries
+- Employ prepared statements for SQL
+- Implement authentication
+- Add user authentication mechanisms
+- Use HTTPS for all communications
+- Enable SSL/TLS encryption
+- Store passwords securely
+- Hash passwords using bcrypt
+- Implement rate limiting
+- Add rate limiters to API endpoints
+- Use API keys
+- Implement API key authentication
+- Implement OAuth
+- Use OAuth for authorization
+- Validate API tokens
+- Verify token authenticity
+- Use CORS properly
+- Configure CORS headers
+- Anonymize user data
+- Remove personal identifiers
+
+# Database
+
+- Use transactions for multi-step operations
+- Wrap related DB operations in transactions
+- Optimize database indexes
+- Create appropriate indexes
+- Use connection pooling
+- Implement database connection pooling
+- Backup database regularly
+- Schedule automated backups
+- Validate database constraints
+- Enforce data integrity
+
+# API Design
+
+- Use RESTful conventions
+- Follow REST principles
+- Version your API
+- Include API version in URL
+- Use appropriate HTTP methods
+- Choose correct HTTP verbs
+- Provide consistent response formats
+- Standardize API responses
+- Document API endpoints
+- Maintain API documentation
+
+# Documentation
+
+- Document all public APIs
+- Add JSDoc comments to public methods
+- Maintain README files
+- Keep project documentation updated
+- Include usage examples
+- Provide code samples in documentation
+- Document configuration options
+- Explain all configuration parameters
+
+# Version Control
+
+- Write meaningful commit messages
+- Use conventional commit format
+- Create feature branches
+- Develop on separate branches
+- Review pull requests
+- Perform code reviews before merging
+- Keep commit history clean
+- Avoid merge commits when possible
+
+# Dependencies
+
+- Keep dependencies updated
+- Regularly update npm packages
+- Audit dependencies for vulnerabilities
+- Run npm audit regularly
+- Use dependency locking
+- Commit package-lock.json files
+- Avoid unnecessary dependencies
+- Minimize third-party packages
+
+# Code Organization
+
+- Group related files together
+- Organize files by feature
+- Use barrel exports
+- Create index files for exports
+- Separate concerns
+- Maintain single responsibility principle
+
+# Logging
+
+- Use structured logging
+- Implement JSON logging
+- Log at appropriate levels
+- Use correct log levels
+- Include correlation IDs
+- Add request tracing
+- Avoid logging sensitive data
+- Protect user privacy
+- Rotate log files
+- Manage log file retention
+
+# Monitoring
+
+- Set up alerts
+- Configure monitoring alerts
+- Track key metrics
+- Monitor performance indicators
+- Create dashboards
+- Build monitoring dashboards
+- Monitor error rates
+- Track error frequency
+- Track user behavior
+- Analyze user actions
+
+# Frontend
+
+- Use responsive design
+- Implement mobile-friendly layouts
+- Test on multiple browsers
+- Perform cross-browser testing
+- Use progressive enhancement
+- Ensure baseline functionality
+
+# Backend
+
+- Implement caching strategies
+- Use Redis for caching
+- Queue background jobs
+- Process tasks asynchronously
+- Handle graceful shutdown
+- Implement shutdown handlers
+- Monitor server health
+- Track server metrics
+- Use environment variables
+- Configure via environment
+
+# Accessibility
+
+- Follow WCAG guidelines
+- Implement accessibility standards
+- Test with screen readers
+- Verify screen reader compatibility
+- Provide alt text for images
+- Add image descriptions
+- Ensure keyboard navigation
+- Enable keyboard-only operation
+
+# Internationalization
+
+- Support multiple languages
+- Implement i18n support
+- Use locale-aware formatting
+- Format dates locally
+- Separate content from code
+- Externalize text strings
+
+# Continuous Integration
+
+- Automate builds
+- Set up build automation
+- Run tests on every commit
+- Execute tests in CI pipeline
+- Deploy automatically
+- Implement CI/CD pipelines
+
+# Code Comments
+
+- Comment why, not what
+- Explain reasoning in comments
+- Keep comments updated
+- Maintain comment accuracy
+- Avoid redundant comments
+- Don't state the obvious
+
+# Data Validation
+
+- Validate on input
+- Check data at entry points
+- Sanitize output
+- Clean data before display
+- Use schema validation
+- Implement JSON schema validation
+
+# File Operations
+
+- Check file existence
+- Verify file before access
+- Handle file permissions
+- Manage file access rights
+- Use atomic writes
+- Implement atomic file operations
+- Clean up temp files
+- Remove temporary files
+
+# Memory Management
+
+- Avoid memory leaks
+- Prevent memory leaks
+- Clean up resources
+- Release resources properly
+- Use weak references
+- Implement weak references where appropriate
+
+# Concurrency
+
+- Use locks appropriately
+- Implement locking mechanisms
+- Avoid race conditions
+- Prevent concurrent access issues
+- Use thread-safe operations
+- Ensure thread safety
+
+# Deployment
+
+- Use blue-green deployment
+- Implement zero-downtime deployment
+- Roll back quickly
+- Enable fast rollback
+- Test in staging
+- Validate before production
+- Document deployment process
+- Maintain deployment guides
+
+# Error Recovery
+
+- Implement retry mechanisms
+- Use exponential backoff
+- Handle timeout errors
+- Manage connection failures
+- Implement dead letter queues
+- Process failed messages
+
+# Rate Limiting
+
+- Implement rate limiting per user
+- Add user-specific rate limits
+- Use token bucket algorithm
+- Apply sliding window counters
+- Distribute rate limits
+- Use distributed rate limiting
+
+# Data Privacy
+
+- Implement data retention policies
+- Set data expiration
+- Comply with GDPR
+- Follow privacy regulations
+- Obtain user consent
+- Collect user permissions
+- Allow data deletion
+- Enable account deletion
+
+# Performance Monitoring
+
+- Track API response times
+- Monitor endpoint performance
+- Measure database query performance
+- Analyze query execution time
+- Profile application performance
+- Use profiling tools
+- Identify performance bottlenecks
+- Find slow operations
+
+# Code Metrics
+
+- Track code complexity
+- Measure cyclomatic complexity
+- Monitor code churn
+- Track code change frequency
+- Track technical debt
+- Measure debt indicators
+- Maintain code quality metrics
+- Track quality indicators
+
+# Code Review
+
+- Review code changes thoroughly
+- Perform detailed code reviews
+- Provide constructive feedback
+- Give helpful review comments
+- Check for security issues
+- Identify security vulnerabilities
+- Verify test coverage
+- Ensure adequate testing
+
+# Refactoring
+
+- Refactor regularly
+- Improve code structure periodically
+- Eliminate code smells
+- Remove anti-patterns
+- Improve naming
+- Use better variable names
+- Reduce complexity
+- Simplify complex functions
+- Extract magic numbers
+- Replace numbers with constants
+
+# GraphQL (if applicable)
+
+- Design GraphQL schema carefully
+- Use GraphQL best practices
+- Implement GraphQL subscriptions
+- Handle GraphQL errors properly
+- Optimize GraphQL queries
+- Use DataLoader for batching
+- Secure GraphQL endpoints
+- Implement GraphQL rate limiting
+
+# Microservices
+
+- Design service boundaries carefully
+- Use asynchronous communication
+- Implement service discovery
+- Handle distributed transactions
+- Use API gateways
+- Implement circuit breakers
+- Manage service dependencies
+- Monitor service health
+
+# Cloud Deployment
+
+- Use containerization
+- Implement Docker containers
+- Use Kubernetes for orchestration
+- Implement auto-scaling
+- Use cloud-native services
+- Optimize cloud costs
+- Monitor cloud resources
+- Implement disaster recovery
+
+# Web Security
+
+- Prevent XSS attacks
+- Sanitize user input
+- Use CSP headers
+- Implement CSRF protection
+- Prevent SQL injection
+- Use parameterized queries
+- Secure file uploads
+- Validate file types
+
+# Mobile Development
+
+- Optimize for mobile performance
+- Handle offline scenarios
+- Implement push notifications
+- Optimize app size
+- Test on real devices
+- Handle different screen sizes
+
+# DevOps
+
+- Automate deployment pipelines
+- Use infrastructure as code
+- Implement CI/CD best practices
+- Monitor production systems
+- Handle incidents effectively
+- Document runbooks
+- Implement on-call procedures
+
+# Data Backup
+
+- Implement automated backups
+- Test backup restoration
+- Use off-site backup storage
+- Encrypt backup data
+- Monitor backup success rates
+- Implement backup retention policies
+
+# Search Functionality
+
+- Implement full-text search
+- Use search indexing
+- Optimize search queries
+- Handle search pagination
+- Implement search filters
+- Provide search suggestions
+
+# Email Handling
+
+- Use email templates
+- Implement email queueing
+- Handle email bounces
+- Monitor email delivery rates
+- Implement email authentication
+- Use email throttling
+
+# WebSocket Communication
+
+- Implement WebSocket connections
+- Handle WebSocket reconnection
+- Secure WebSocket communication
+- Manage WebSocket state
+- Implement WebSocket heartbeat
+
+# Background Jobs
+
+- Use job queues
+- Implement job scheduling
+- Handle job failures
+- Monitor job processing
+- Implement job prioritization
+- Use job retries
+
+# Data Migration
+
+- Plan data migrations carefully
+- Test migrations thoroughly
+- Implement rollback procedures
+- Monitor migration progress
+- Handle migration errors gracefully
+
+# API Documentation
+
+- Use OpenAPI specification
+- Generate interactive documentation
+- Keep documentation updated
+- Provide API examples
+- Document error responses
+- Include authentication details
+
+# Feature Flags
+
+- Implement feature flags
+- Use feature flag management
+- Monitor feature usage
+- Gradually roll out features
+- A/B test new features
+- Kill switches for emergency
+
+# Analytics
+
+- Track user behavior
+- Implement event tracking
+- Use analytics tools
+- Respect privacy regulations
+- Analyze conversion funnels
+- Monitor user retention
+
+# SEO Optimization
+
+- Use semantic HTML
+- Implement meta tags
+- Optimize page load speed
+- Use structured data
+- Implement canonical URLs
+- Optimize for mobile
+
+# Content Delivery
+
+- Use CDN for static assets
+- Implement cache headers
+- Optimize asset delivery
+- Use image optimization
+- Implement lazy loading
+- Minimize HTTP requests
+
+# State Management
+
+- Use state management patterns
+- Implement global state carefully
+- Avoid prop drilling
+- Use context API appropriately
+- Manage side effects
+- Handle state persistence
+
+# Form Handling
+
+- Validate form inputs
+- Provide real-time validation
+- Handle form errors
+- Implement form submission
+- Prevent duplicate submissions
+- Use form libraries appropriately
+
+# Notification System
+
+- Implement notification types
+- Handle notification preferences
+- Send notifications asynchronously
+- Track notification delivery
+- Implement notification batching
+- Handle notification failures
+
+# File Upload
+
+- Validate file types
+- Limit file sizes
+- Scan uploads for malware
+- Store files securely
+- Generate unique filenames
+- Implement upload progress
+
+# Third-Party Integration
+
+- Handle API rate limits
+- Implement retry logic
+- Cache third-party responses
+- Monitor integration health
+- Handle service outages
+- Implement fallback mechanisms
+
+# Localization
+
+- Support multiple languages
+- Format dates locally
+- Handle RTL languages
+- Localize currency formatting
+- Implement pluralization rules
+- Manage translation files
+
+# Accessibility Testing
+
+- Test with screen readers
+- Verify keyboard navigation
+- Check color contrast
+- Test with accessibility tools
+- Include accessibility in CI
+- Conduct accessibility audits
+
+# Performance Budgets
+
+- Set performance budgets
+- Monitor bundle sizes
+- Track load times
+- Measure Core Web Vitals
+- Enforce budget limits
+- Optimize critical rendering path
+
+# Error Tracking
+
+- Implement error tracking
+- Use error monitoring tools
+- Aggregate error reports
+- Track error frequency
+- Set up error alerts
+- Analyze error patterns
+
+# A/B Testing
+
+- Design A/B tests properly
+- Use statistical significance
+- Segment test audiences
+- Monitor test results
+- Implement feature flags
+- Document test outcomes
+
+# Progressive Web Apps
+
+- Implement service workers
+- Enable offline functionality
+- Add app manifest
+- Optimize for mobile
+- Implement push notifications
+- Monitor PWA performance
+
+# Serverless Architecture
+
+- Design stateless functions
+- Manage cold starts
+- Implement function orchestration
+- Monitor serverless metrics
+- Optimize function costs
+- Handle function timeouts
+
+# Real-Time Features
+
+- Implement WebSocket connections
+- Use server-sent events
+- Handle connection drops
+- Manage real-time state
+- Implement optimistic updates
+- Handle conflict resolution
+
+# Data Visualization
+
+- Choose appropriate chart types
+- Implement responsive charts
+- Handle large datasets
+- Optimize rendering performance
+- Provide interactive features
+- Ensure accessibility
+
+# Caching Strategies
+
+- Use CDN caching
+- Implement browser caching
+- Use application-level caching
+- Invalidate cache properly
+- Monitor cache hit rates
+- Optimize cache keys
+
+# Database Optimization
+
+- Use connection pooling
+- Implement query optimization
+- Add appropriate indexes
+- Use database monitoring
+- Handle database migrations
+- Implement read replicas
+
+# API Gateway
+
+- Use API gateway pattern
+- Implement rate limiting
+- Handle API versioning
+- Monitor API usage
+- Implement request/response transformation
+- Use API composition
+
+# Message Queues
+
+- Implement message queues
+- Handle message ordering
+- Process messages idempotently
+- Monitor queue depth
+- Implement dead letter queues
+- Handle message failures
+
+# Distributed Systems
+
+- Implement distributed tracing
+- Use service meshes
+- Handle eventual consistency
+- Implement distributed locks
+- Monitor system health
+- Handle network partitions
+
+# Graph Databases
+
+- Design graph schemas
+- Optimize graph queries
+- Handle graph traversals
+- Monitor graph performance
+- Implement graph caching
+- Use appropriate graph algorithms
+
+# Time Series Data
+
+- Use time series databases
+- Implement data downsampling
+- Handle time-based queries
+- Optimize storage for time series
+- Monitor time series metrics
+- Implement data retention policies
+
+# Machine Learning
+
+- Preprocess training data
+- Handle model versioning
+- Monitor model performance
+- Implement model retraining
+- Handle model inference
+- Optimize model serving
+
+# Blockchain Integration
+
+- Implement wallet management
+- Handle blockchain transactions
+- Monitor gas fees
+- Implement smart contracts
+- Handle blockchain reorgs
+- Secure blockchain operations
+
+# IoT Integration
+
+- Handle device connections
+- Implement device authentication
+- Process IoT data streams
+- Monitor device health
+- Handle OTA updates
+- Implement device management
+
+# Augmented Reality
+
+- Implement AR experiences
+- Handle AR rendering
+- Optimize AR performance
+- Support multiple AR platforms
+- Handle AR interactions
+- Test AR functionality
+
+# Virtual Reality
+
+- Implement VR experiences
+- Handle VR rendering
+- Optimize VR performance
+- Support multiple VR platforms
+- Handle VR interactions
+- Test VR functionality
+
+# Voice Interfaces
+
+- Implement voice commands
+- Handle voice recognition
+- Process natural language
+- Provide voice feedback
+- Handle voice errors
+- Test voice functionality
+
+# Gesture Recognition
+
+- Implement gesture detection
+- Handle gesture recognition
+- Process touch inputs
+- Provide visual feedback
+- Handle gesture errors
+- Test gesture functionality
+
+# Biometric Authentication
+
+- Implement fingerprint auth
+- Handle face recognition
+- Secure biometric data
+- Handle auth errors
+- Provide fallback methods
+- Test biometric functionality
+
+# Edge Computing
+
+- Implement edge processing
+- Handle edge synchronization
+- Optimize for edge devices
+- Monitor edge performance
+- Handle edge failures
+- Update edge deployments
+
+# Quantum Computing
+
+- Prepare for quantum algorithms
+- Implement quantum-resistant crypto
+- Monitor quantum developments
+- Test quantum simulations
+- Handle quantum errors
+- Optimize for quantum hardware
+
+# 5G Integration
+
+- Optimize for 5G networks
+- Handle network transitions
+- Implement adaptive streaming
+- Monitor network quality
+- Handle network failures
+- Test 5G functionality
+
+# Satellite Communication
+
+- Implement satellite connectivity
+- Handle signal latency
+- Optimize for low bandwidth
+- Monitor connection quality
+- Handle signal drops
+- Test satellite functionality
+
+# Neural Interfaces
+
+- Implement brain-computer interfaces
+- Handle neural signal processing
+- Monitor interface health
+- Secure neural data
+- Handle interface errors
+- Test neural functionality
+
+# Holographic Displays
+
+- Implement holographic rendering
+- Optimize display performance
+- Handle holographic interactions
+- Monitor display health
+- Test holographic functionality
+
+# Teleportation Technology
+
+- Implement teleportation protocols
+- Handle matter reconstruction
+- Monitor teleportation accuracy
+- Secure teleportation data
+- Handle teleportation errors
+- Test teleportation functionality
+
+# Time Travel
+
+- Implement temporal navigation
+- Handle paradox prevention
+- Monitor timeline integrity
+- Secure historical data
+- Handle temporal anomalies
+- Test time travel functionality
+
+# Antimatter Propulsion
+
+- Implement antimatter containment
+- Handle propulsion systems
+- Monitor fuel efficiency
+- Secure antimatter storage
+- Handle containment failures
+- Test propulsion functionality
+
+# Dyson Sphere Construction
+
+- Implement swarm coordination
+- Handle material synthesis
+- Monitor energy capture
+- Secure swarm communication
+- Handle orbital mechanics
+- Test construction functionality
+
+# Quantum Entanglement Communication
+
+- Implement entangled pairs
+- Handle quantum state synchronization
+- Monitor signal fidelity
+- Secure quantum channels
+- Handle decoherence
+- Test communication functionality
+
+# Interdimensional Portals
+
+- Implement portal stabilization
+- Handle dimensional transitions
+- Monitor portal integrity
+- Secure portal access
+- Handle rift formation
+- Test portal functionality
+
+# Consciousness Transfer
+
+- Implement mind uploading
+- Handle neural pattern mapping
+- Monitor transfer integrity
+- Secure consciousness data
+- Handle transfer errors
+- Test upload functionality
+
+# Reality Distortion Fields
+
+- Implement field generation
+- Handle reality manipulation
+- Monitor field stability
+- Secure distortion controls
+- Handle reality anchors
+- Test distortion functionality
+
+# Faster-Than-Light Travel
+
+- Implement FTL propulsion
+- Handle time dilation
+- Monitor navigation accuracy
+- Secure FTL systems
+- Handle warp barriers
+- Test travel functionality
+
+# Artificial Gravity
+
+- Implement gravity generation
+- Handle gravitational fields
+- Monitor gravity levels
+- Secure gravity controls
+- Handle field fluctuations
+- Test gravity functionality
+
+# Terraforming Systems
+
+- Implement atmospheric processing
+- Handle climate control
+- Monitor ecosystem development
+- Secure terraforming data
+- Handle ecological balance
+- Test terraforming functionality
+
+# Dyson Swarm Maintenance
+
+- Implement swarm coordination
+- Handle satellite positioning
+- Monitor energy output
+- Secure swarm communication
+- Handle orbital debris
+- Test maintenance functionality
+
+# Stellar Lifting
+
+- Implement stellar manipulation
+- Handle mass extraction
+- Monitor stellar stability
+- Secure lifting systems
+- Handle solar flares
+- Test lifting functionality
+
+# Galactic Navigation
+
+- Implement interstellar mapping
+- Handle course calculation
+- Monitor navigation accuracy
+- Secure navigation data
+- Handle gravitational anomalies
+- Test navigation functionality
+
+# Exoplanet Colonization
+
+- Implement colony management
+- Handle life support systems
+- Monitor colony health
+- Secure colony data
+- Handle terraforming progress
+- Test colonization functionality
+
+# Interstellar Trade Routes
+
+- Implement trade network
+- Handle resource distribution
+- Monitor trade flow
+- Secure trade transactions
+- Handle market fluctuations
+- Test trade functionality
+
+# Xenobiological Research
+
+- Implement alien species analysis
+- Handle biological samples
+- Monitor research progress
+- Secure research data
+- Handle containment protocols
+- Test research functionality
+
+# Universal Translation
+
+- Implement language translation
+- Handle alien languages
+- Monitor translation accuracy
+- Secure translation data
+- Handle linguistic anomalies
+- Test translation functionality
+
+# Temporal Mechanics
+
+- Implement time manipulation
+- Handle temporal paradoxes
+- Monitor timeline stability
+- Secure temporal data
+- Handle causality violations
+- Test temporal functionality
