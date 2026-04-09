@@ -24,8 +24,8 @@ OpenCLAW is an AI-powered coding assistant. Project-Self-Improvement integrates 
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy prompts to OpenCLAW configuration directory
 mkdir -p ~/.openclaw/prompts/
@@ -375,7 +375,7 @@ ls -la ~/.openclaw/prompts/self-improvement/
 cat ~/.openclaw/config.json | python -m json.tool
 
 # Reinstall prompts
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/prompts/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/prompts/ \
       ~/.openclaw/prompts/self-improvement/
 ```
 

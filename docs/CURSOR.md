@@ -16,8 +16,8 @@ Project-Self-Improvement integrates with Cursor IDE through `.cursorrules` files
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy skill to Cursor's global skills directory
 mkdir -p ~/.claude/skills/
@@ -29,7 +29,7 @@ cp -r .claude/skills/rulesmith/ ~/.claude/skills/
 ```bash
 # Within your Cursor project
 mkdir -p .claude/skills/
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       .claude/skills/
 ```
 
@@ -52,7 +52,7 @@ cp -r .claude/skills/rulesmith/prompts/ .cursor-prompts/
 Cursor uses plain text files with `#` for comments. Example `.cursorrules`:
 
 ```
-# Project-Self_Improvement Generated Rules
+# rulesmith Generated Rules
 # Last Updated: 2026-04-08T14:30:00Z
 
 # Communication Style
@@ -319,7 +319,7 @@ cd project-b && /improve-rules
 ls -la ~/.claude/skills/rulesmith/
 
 # Reinstall if needed
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       ~/.claude/skills/
 ```
 

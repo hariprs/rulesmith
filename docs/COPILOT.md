@@ -16,8 +16,8 @@ Project-Self-Improvement integrates with GitHub Copilot through custom instructi
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy skill to global skills directory
 mkdir -p ~/.claude/skills/

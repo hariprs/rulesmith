@@ -56,8 +56,8 @@ Select your platform for detailed installation instructions:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 ```
 
 ### Install Dependencies (Optional)
@@ -89,7 +89,7 @@ Expected output:
 ## Directory Structure After Installation
 
 ```
-Project-Self_Improvement/
+rulesmith/
 ├── docs/
 │   └── platforms/              # This guide
 │       ├── INSTALLATION-GUIDE.md

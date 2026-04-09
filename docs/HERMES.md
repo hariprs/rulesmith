@@ -24,8 +24,8 @@ Hermes Agent is an autonomous AI agent framework. Project-Self-Improvement integ
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy prompts to Hermes templates directory
 mkdir -p ~/.hermes/templates/self-improvement/
@@ -408,7 +408,7 @@ hermes templates validate analyze-conversation.j2
 hermes templates list | grep self-improvement
 
 # Reinstall templates
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/prompts/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/prompts/ \
       ~/.hermes/templates/self-improvement/
 ```
 

@@ -18,8 +18,8 @@ Install the skill globally so it's available in all projects:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy skill to Claude Code's global skills directory
 cp -r .claude/skills/rulesmith/ ~/.claude/skills/
@@ -32,16 +32,16 @@ Install the skill within a specific project:
 ```bash
 # Within your project directory
 mkdir -p .claude/skills/
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       .claude/skills/
 ```
 
 ### Method 3: Repository Clone with Skill Already Included
 
-If you've cloned the full Project-Self_Improvement repository, the skill is already in place:
+If you've cloned the full rulesmith repository, the skill is already in place:
 
 ```bash
-cd Project-Self_Improvement
+cd rulesmith
 # The skill is at .claude/skills/rulesmith/
 ```
 
@@ -219,7 +219,7 @@ Rules will be formatted according to this project's conventions.
 ls -la ~/.claude/skills/rulesmith/
 
 # If missing, re-install
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       ~/.claude/skills/
 ```
 
@@ -261,7 +261,7 @@ chmod 700 ~/.claude/skills/rulesmith/data/
 To update to the latest version:
 
 ```bash
-cd /path/to/Project-Self_Improvement
+cd /path/to/rulesmith
 git pull
 
 # Re-copy skill files

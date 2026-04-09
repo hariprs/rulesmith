@@ -24,8 +24,8 @@ Qwen Code is Alibaba's AI coding assistant. Project-Self-Improvement can integra
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # Copy prompts to Qwen-compatible location
 mkdir -p ~/.qwen/prompts/

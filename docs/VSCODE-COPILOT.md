@@ -37,8 +37,8 @@ Or in VS Code:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Project-Self_Improvement.git
-cd Project-Self_Improvement
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
 
 # For single workspace
 mkdir -p .vscode/.claude/skills/
@@ -390,7 +390,7 @@ code .
 
 # 2. In VS Code terminal, install skill
 mkdir -p .vscode/.claude/skills/
-git clone https://github.com/yourusername/Project-Self_Improvement.git temp
+git clone https://github.com/hariprs/rulesmith.git temp
 cp -r temp/.claude/skills/rulesmith/ .vscode/.claude/skills/
 rm -rf temp
 
@@ -411,7 +411,7 @@ code existing-project
 
 # 2. Add skill globally
 mkdir -p ~/.claude/skills/
-cp -r /path/to/Project-Self_Improvement/.claude/skills/rulesmith/ \
+cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       ~/.claude/skills/
 
 # 3. Open Copilot Chat (Ctrl+Shift+I)
