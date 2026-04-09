@@ -1,14 +1,14 @@
-# Project-Self-Improvement - Installation Guide
+# RuleSmith - Installation Guide
 
 **AI Assistant Conversation Analysis & Rule Improvement System**
 
-This guide covers installation of Project-Self-Improvement across multiple AI coding platforms.
+This guide covers installation of RuleSmith across multiple AI coding platforms.
 
 ---
 
-## What is Project-Self-Improvement?
+## What is RuleSmith?
 
-Project-Self-Improvement is a meta-cognitive skill that enables AI assistants to learn from conversation history. It:
+RuleSmith is a meta-cognitive skill that enables AI assistants to learn from conversation history. It:
 
 - **Analyzes conversations** to identify where you corrected the AI's suggestions
 - **Extracts patterns** from recurring corrections across sessions

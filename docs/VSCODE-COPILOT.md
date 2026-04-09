@@ -1,4 +1,4 @@
-# Project-Self-Improvement for VS Code + GitHub Copilot
+# RuleSmith for VS Code + GitHub Copilot
 
 **Workspace-Level Integration**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This guide covers using Project-Self-Improvement specifically with VS Code and the GitHub Copilot extension, including workspace-level configuration and multi-root workspace support.
+This guide covers using RuleSmith specifically with VS Code and the GitHub Copilot extension, including workspace-level configuration and multi-root workspace support.
 
 ---
 
@@ -33,7 +33,7 @@ Or in VS Code:
 2. Search "GitHub Copilot"
 3. Click Install
 
-### Step 2: Install Project-Self-Improvement
+### Step 2: Install RuleSmith
 
 ```bash
 # Clone the repository

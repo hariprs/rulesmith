@@ -1,8 +1,8 @@
 # Platform Documentation Index
 
-**Project-Self-Improvement - Platform-Specific Guides**
+**RuleSmith - Platform-Specific Guides**
 
-This directory contains installation and usage guides for using Project-Self-Improvement with various AI coding platforms.
+This directory contains installation and usage guides for using RuleSmith with various AI coding platforms.
 
 ---
 
@@ -23,7 +23,7 @@ This directory contains installation and usage guides for using Project-Self-Imp
 ## Platform Comparison
 
 ### Native Support Platforms
-These platforms have built-in support for Project-Self-Improvement:
+These platforms have built-in support for RuleSmith:
 
 | Platform | Command | State Management | Backup |
 |----------|---------|------------------|--------|

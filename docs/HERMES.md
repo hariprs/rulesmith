@@ -1,4 +1,4 @@
-# Project-Self-Improvement for Hermes Agent
+# RuleSmith for Hermes Agent
 
 **Prompt Template Integration**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-Hermes Agent is an autonomous AI agent framework. Project-Self-Improvement integrates with Hermes through its prompt template system and agent configuration.
+Hermes Agent is an autonomous AI agent framework. RuleSmith integrates with Hermes through its prompt template system and agent configuration.
 
 ---
 

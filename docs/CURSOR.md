@@ -1,4 +1,4 @@
-# Project-Self-Improvement for Cursor IDE
+# RuleSmith for Cursor IDE
 
 **Native `.cursorrules` Integration**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-Project-Self-Improvement integrates with Cursor IDE through `.cursorrules` files. It analyzes your conversations and generates rule suggestions that Cursor uses to provide better assistance.
+RuleSmith integrates with Cursor IDE through `.cursorrules` files. It analyzes your conversations and generates rule suggestions that Cursor uses to provide better assistance.
 
 ---
 
@@ -160,7 +160,7 @@ For rules to apply to all Cursor projects:
 # Create global .cursorrules
 cat > ~/.cursorrules << 'EOF'
 # Global Cursor Rules
-# Managed by Project-Self-Improvement
+# Managed by RuleSmith
 
 # Default preferences
 - Be concise and direct

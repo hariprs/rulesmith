@@ -1,4 +1,4 @@
-# Project-Self-Improvement for OpenCLAW
+# RuleSmith for OpenCLAW
 
 **Custom Instructions Integration**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-OpenCLAW is an AI-powered coding assistant. Project-Self-Improvement integrates with OpenCLAW through its custom instructions and prompt configuration system.
+OpenCLAW is an AI-powered coding assistant. RuleSmith integrates with OpenCLAW through its custom instructions and prompt configuration system.
 
 ---
 
@@ -66,7 +66,7 @@ Create `~/.openclaw/instructions.md`:
 
 ```markdown
 # OpenCLAW Custom Instructions
-# Managed by Project-Self-Improvement
+# Managed by RuleSmith
 
 ## Assistant Role
 You are an expert coding assistant that learns from user feedback.

@@ -1,4 +1,4 @@
-# Project-Self-Improvement for Claude Code
+# RuleSmith for Claude Code
 
 **Native Support - Full Feature Access**
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-Project-Self-Improvement is natively designed for Claude Code. It integrates as a skill that the AI assistant can invoke to analyze conversation patterns and generate rule improvements.
+RuleSmith is natively designed for Claude Code. It integrates as a skill that the AI assistant can invoke to analyze conversation patterns and generate rule improvements.
 
 ---
 
@@ -285,7 +285,7 @@ A: No. All processing is local. No external APIs are used.
 
 **Q: Can I use multiple skills together?**
 
-A: Yes. Project-Self-Improvement works alongside other Claude Code skills.
+A: Yes. RuleSmith works alongside other Claude Code skills.
 
 **Q: How often should I run analysis?**
 
