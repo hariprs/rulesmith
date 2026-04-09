@@ -22,6 +22,8 @@ Qwen Code is Alibaba's AI coding assistant. RuleSmith can integrate with Qwen Co
 
 ### Method 1: Direct Prompt Integration
 
+#### macOS / Linux
+
 ```bash
 # Clone repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -32,7 +34,21 @@ mkdir -p ~/.qwen/prompts/
 cp -r .claude/skills/rulesmith/prompts/ ~/.qwen/prompts/self-improvement/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy prompts to Qwen-compatible location
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.qwen\prompts"
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts "$env:USERPROFILE\.qwen\prompts\self-improvement\"
+```
+
 ### Method 2: Adapter Script Installation
+
+#### macOS / Linux
 
 ```bash
 # Install Python adapter
@@ -46,18 +62,35 @@ cp .claude/skills/rulesmith/scripts/qwen-adapter.py \
 chmod +x ~/.qwen/adapter/self-improvement.py
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Install Python adapter
+pip install qwen-code-adapter
+
+# Copy adapter scripts
+Copy-Item .claude\skills\rulesmith\scripts\qwen-adapter.py "$env:USERPROFILE\.qwen\adapter\self-improvement.py"
+```
+
 ### Method 3: VS Code Extension Setup
 
 If using Qwen Code VS Code extension:
+
+#### macOS / Linux
 
 ```bash
 # Create Qwen-specific skill directory
 mkdir -p .vscode/qwen/skills/
 cp -r .claude/skills/rulesmith/ .vscode/qwen/skills/
+```
 
-# Update VS Code settings for Qwen
-cat >> .vscode/settings.json << 'EOF'
-{
+#### Windows (PowerShell)
+
+```powershell
+# Create Qwen-specific skill directory
+New-Item -ItemType Directory -Force -Path .vscode\qwen\skills
+Copy-Item -Recurse -Force .claude\skills\rulesmith .vscode\qwen\skills\
+```
   "qwen.code.customInstructions": ".qwen/instructions.md",
   "qwen.code.skillsPath": ".vscode/qwen/skills/"
 }

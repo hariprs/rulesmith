@@ -22,6 +22,8 @@ Hermes Agent is an autonomous AI agent framework. RuleSmith integrates with Herm
 
 ### Method 1: Hermes Template Integration
 
+#### macOS / Linux
+
 ```bash
 # Clone repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -37,7 +39,25 @@ mkdir -p ~/.hermes/state/
 cp -r .claude/skills/rulesmith/data/ ~/.hermes/state/self-improvement/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy prompts to Hermes templates directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.hermes\templates\self-improvement"
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts "$env:USERPROFILE\.hermes\templates\self-improvement\"
+
+# Copy state management
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.hermes\state"
+Copy-Item -Recurse -Force .claude\skills\rulesmith\data "$env:USERPROFILE\.hermes\state\self-improvement\"
+```
+
 ### Method 2: Agent Configuration
+
+#### macOS / Linux
 
 ```bash
 # Add to Hermes agent config
@@ -53,6 +73,24 @@ self_improvement:
     - "/analyze"
     - "/learn"
 EOF
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Add to Hermes agent config
+@"
+self_improvement:
+  type: analysis
+  description: "Analyze conversations and improve agent behavior"
+  templates:
+    - $env:USERPROFILE\.hermes\templates\self-improvement\
+  state_file: $env:USERPROFILE\.hermes\state\self-improvement\state.json
+  triggers:
+    - "/rulesmith"
+    - "/analyze"
+    - "/learn"
+"@ | Add-Content -Encoding utf8 "$env:USERPROFILE\.hermes\agents.yaml"
 ```
 
 ### Method 3: Docker Integration

@@ -55,14 +55,31 @@ Select your platform for detailed installation instructions:
 
 ### Clone Repository
 
+#### macOS / Linux
+
 ```bash
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+```
+
+#### Windows (PowerShell)
+
+```powershell
 git clone https://github.com/hariprs/rulesmith.git
 cd rulesmith
 ```
 
 ### Install Dependencies (Optional)
 
+#### macOS / Linux
+
 ```bash
+npm install
+```
+
+#### Windows (PowerShell)
+
+```powershell
 npm install
 ```
 
@@ -70,9 +87,18 @@ This enables validation scripts but is **not required** for core functionality.
 
 ### Verify Installation
 
+#### macOS / Linux
+
 ```bash
 # Run validation script
 bash .claude/skills/rulesmith/scripts/validate-setup.sh
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Run validation script
+powershell -ExecutionPolicy Bypass -File .claude\skills\rulesmith\scripts\validate-setup.ps1
 ```
 
 Expected output:
@@ -80,7 +106,7 @@ Expected output:
 ✅ Directory structure valid
 ✅ All prompt files present
 ✅ State files ready
-✅ File permissions secure (0600)
+✅ File permissions secure
 ✅ Installation verified
 ```
 

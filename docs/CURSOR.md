@@ -14,6 +14,8 @@ RuleSmith integrates with Cursor IDE through `.cursorrules` files. It analyzes y
 
 ### Method 1: Global Installation (Recommended for Cursor)
 
+#### macOS / Linux
+
 ```bash
 # Clone the repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -24,7 +26,21 @@ mkdir -p ~/.claude/skills/
 cp -r .claude/skills/rulesmith/ ~/.claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone the repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy skill to Cursor's global skills directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills"
+Copy-Item -Recurse -Force .claude\skills\rulesmith "$env:USERPROFILE\.claude\skills\"
+```
+
 ### Method 2: Project-Level Installation
+
+#### macOS / Linux
 
 ```bash
 # Within your Cursor project
@@ -33,14 +49,32 @@ cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       .claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Within your Cursor project
+New-Item -ItemType Directory -Force -Path .claude\skills
+Copy-Item -Recurse -Force C:\path\to\rulesmith\.claude\skills\rulesmith .claude\skills\
+```
+
 ### Method 3: Direct `.cursorrules` Integration
 
 For immediate use without the skill system:
+
+#### macOS / Linux
 
 ```bash
 # Copy the prompts directory to your project
 mkdir -p .cursor-prompts/
 cp -r .claude/skills/rulesmith/prompts/ .cursor-prompts/
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Copy the prompts directory to your project
+New-Item -ItemType Directory -Force -Path .cursor-prompts
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts .cursor-prompts\
 ```
 
 ---

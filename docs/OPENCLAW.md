@@ -22,6 +22,8 @@ OpenCLAW is an AI-powered coding assistant. RuleSmith integrates with OpenCLAW t
 
 ### Method 1: OpenCLAW Desktop App
 
+#### macOS / Linux
+
 ```bash
 # Clone repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -36,24 +38,61 @@ mkdir -p ~/.openclaw/data/
 cp -r .claude/skills/rulesmith/data/ ~/.openclaw/data/self-improvement/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy prompts to OpenCLAW configuration directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.openclaw\prompts"
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts "$env:USERPROFILE\.openclaw\prompts\self-improvement\"
+
+# Copy state management files
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.openclaw\data"
+Copy-Item -Recurse -Force .claude\skills\rulesmith\data "$env:USERPROFILE\.openclaw\data\self-improvement\"
+```
+
 ### Method 2: Browser Extension
+
+#### macOS / Linux
 
 ```bash
 # For OpenCLAW browser extension
 mkdir -p ~/openclaw-extension/skills/
 cp -r .claude/skills/rulesmith/ ~/openclaw-extension/skills/
-
-# Enable in extension settings
-# Settings → Advanced → Custom Skills Path: ~/openclaw-extension/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# For OpenCLAW browser extension
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\openclaw-extension\skills"
+Copy-Item -Recurse -Force .claude\skills\rulesmith "$env:USERPROFILE\openclaw-extension\skills\"
+```
+
+Enable in extension settings:
+- Settings → Advanced → Custom Skills Path
+
 ### Method 3: Project-Level Integration
+
+#### macOS / Linux
 
 ```bash
 # Within your project directory
 mkdir -p .openclaw/
 cp -r .claude/skills/rulesmith/prompts/ .openclaw/prompts/
-echo "{extends: ['.openclaw/prompts/self-improvement/']}" > .openclaw/config.json
+echo '{\"extends\": [\".openclaw/prompts/self-improvement/\"]}' > .openclaw/config.json
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Within your project directory
+New-Item -ItemType Directory -Force -Path .openclaw\prompts
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts .openclaw\prompts\
+'{\"extends\": [\".openclaw/prompts/self-improvement/\"]}' | Out-File -Encoding utf8 .openclaw\config.json
 ```
 
 ---

@@ -16,6 +16,8 @@ RuleSmith is natively designed for Claude Code. It integrates as a skill that th
 
 Install the skill globally so it's available in all projects:
 
+#### macOS / Linux
+
 ```bash
 # Clone the repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -25,9 +27,23 @@ cd rulesmith
 cp -r .claude/skills/rulesmith/ ~/.claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone the repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy skill to Claude Code's global skills directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills"
+Copy-Item -Recurse -Force .claude\skills\rulesmith "$env:USERPROFILE\.claude\skills\"
+```
+
 ### Method 2: Project-Level Installation
 
 Install the skill within a specific project:
+
+#### macOS / Linux
 
 ```bash
 # Within your project directory
@@ -36,13 +52,30 @@ cp -r /path/to/rulesmith/.claude/skills/rulesmith/ \
       .claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Within your project directory
+New-Item -ItemType Directory -Force -Path .claude\skills
+Copy-Item -Recurse -Force C:\path\to\rulesmith\.claude\skills\rulesmith .claude\skills\
+```
+
 ### Method 3: Repository Clone with Skill Already Included
 
 If you've cloned the full rulesmith repository, the skill is already in place:
 
+#### macOS / Linux
+
 ```bash
 cd rulesmith
 # The skill is at .claude/skills/rulesmith/
+```
+
+#### Windows (PowerShell)
+
+```powershell
+cd rulesmith
+# The skill is at .claude\skills\rulesmith\
 ```
 
 ---
@@ -51,9 +84,18 @@ cd rulesmith
 
 Verify the installation:
 
+#### macOS / Linux
+
 ```bash
 # Run validation script
 bash ~/.claude/skills/rulesmith/scripts/validate-setup.sh
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Run validation script
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\skills\rulesmith\scripts\validate-setup.ps1"
 ```
 
 Expected output:
@@ -61,7 +103,7 @@ Expected output:
 ✅ Directory structure valid
 ✅ All prompt files present
 ✅ State files ready
-✅ File permissions secure (0600)
+✅ File permissions secure
 ✅ Installation verified for Claude Code
 ```
 

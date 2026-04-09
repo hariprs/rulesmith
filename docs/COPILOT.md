@@ -14,6 +14,8 @@ RuleSmith integrates with GitHub Copilot through custom instructions. It analyze
 
 ### Method 1: Global Installation
 
+#### macOS / Linux
+
 ```bash
 # Clone the repository
 git clone https://github.com/hariprs/rulesmith.git
@@ -24,7 +26,21 @@ mkdir -p ~/.claude/skills/
 cp -r .claude/skills/rulesmith/ ~/.claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Clone the repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# Copy skill to global skills directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills"
+Copy-Item -Recurse -Force .claude\skills\rulesmith "$env:USERPROFILE\.claude\skills\"
+```
+
 ### Method 2: VS Code Extension Integration
+
+#### macOS / Linux
 
 ```bash
 # For VS Code with Copilot extension
@@ -35,7 +51,20 @@ mkdir -p .vscode/.claude/skills/
 cp -r .claude/skills/rulesmith/ .vscode/.claude/skills/
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# For VS Code with Copilot extension
+code --install-extension github.copilot
+
+# Copy skill to VS Code workspace
+New-Item -ItemType Directory -Force -Path .vscode\.claude\skills
+Copy-Item -Recurse -Force .claude\skills\rulesmith .vscode\.claude\skills\
+```
+
 ### Method 3: Copilot Instructions File
+
+#### macOS / Linux
 
 ```bash
 # Create Copilot custom instructions directory
@@ -43,6 +72,16 @@ mkdir -p ~/.github/copilot/
 
 # Copy prompts
 cp -r .claude/skills/rulesmith/prompts/ ~/.github/copilot/rulesmith/
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Create Copilot custom instructions directory
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.github\copilot"
+
+# Copy prompts
+Copy-Item -Recurse -Force .claude\skills\rulesmith\prompts "$env:USERPROFILE\.github\copilot\rulesmith\"
 ```
 
 ---

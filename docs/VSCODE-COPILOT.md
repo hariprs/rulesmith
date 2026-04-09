@@ -22,18 +22,30 @@ This guide covers using RuleSmith specifically with VS Code and the GitHub Copil
 
 ### Step 1: Install GitHub Copilot Extension
 
+#### macOS / Linux
+
 ```bash
 # Via VS Code CLI
 code --install-extension github.copilot
 code --install-extension github.copilot-chat
 ```
 
+#### Windows (PowerShell)
+
+```powershell
+# Via VS Code CLI
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+```
+
 Or in VS Code:
-1. Extensions panel (Ctrl+Shift+X)
+1. Extensions panel (`Ctrl+Shift+X` / `Ctrl+Shift+X`)
 2. Search "GitHub Copilot"
 3. Click Install
 
 ### Step 2: Install RuleSmith
+
+#### macOS / Linux
 
 ```bash
 # Clone the repository
@@ -47,6 +59,22 @@ cp -r .claude/skills/rulesmith/ .vscode/.claude/skills/
 # For all workspaces (global)
 mkdir -p ~/.claude/skills/
 cp -r .claude/skills/rulesmith/ ~/.claude/skills/
+```
+
+#### Windows (PowerShell)
+
+```powershell
+# Clone the repository
+git clone https://github.com/hariprs/rulesmith.git
+cd rulesmith
+
+# For single workspace
+New-Item -ItemType Directory -Force -Path .vscode\.claude\skills
+Copy-Item -Recurse -Force .claude\skills\rulesmith .vscode\.claude\skills\
+
+# For all workspaces (global)
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills"
+Copy-Item -Recurse -Force .claude\skills\rulesmith "$env:USERPROFILE\.claude\skills\"
 ```
 
 ### Step 3: Configure VS Code Settings
