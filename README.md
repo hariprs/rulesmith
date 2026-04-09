@@ -58,6 +58,56 @@ const detector = new PatternDetector();
 const patterns = await detector.analyze(conversationData);
 ```
 
+## Usage Example
+
+### Learning from Conversation Patterns (Cursor IDE)
+
+**Scenario:** You've been working with Cursor on a TypeScript project and notice it keeps giving overly verbose explanations.
+
+**Step 1: Have a conversation with Cursor**
+```
+You: Create a function to fetch user data
+
+Cursor: [Long detailed explanation about async/await,
+fetch API, error handling patterns... 15 sentences]
+
+You: Too verbose. Just the code.
+
+Cursor: [Provides code but still adds 8 sentences of explanation]
+
+You: Less explanation, more code.
+```
+
+**Step 2: Invoke RuleSmith**
+```
+You: /rulesmith
+```
+
+**Step 3: Review the analysis**
+```
+📊 Conversation Analysis
+
+**Corrections Found:** 2
+
+**Patterns Identified:**
+
+1. "Too verbose" / "Less explanation" (count: 2)
+   Category: CODE_STYLE
+   → Suggested rule: Keep explanations under 3 sentences
+
+**Apply to .cursorrules?** (yes/no/edit)
+```
+
+**Step 4: Apply and verify**
+```
+You: yes
+
+✓ Rules added to .cursorrules:
+  # Keep explanations under 3 sentences
+
+Next time you ask for code, Cursor will follow this rule automatically.
+```
+
 ## Development
 
 ```bash
